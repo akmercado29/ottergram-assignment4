@@ -76,24 +76,8 @@ function addNumberKeyHandler() {
     var thumbnails = getThumbnailsArray();
     document.body.addEventListener('keyup', function(event) {
         event.preventDefault();
-        if (event.keyCode === 49) {
-            setDetailsFromThumb(thumbnails[0]);
-            showDetails();
-        }
-        if (event.keyCode === 50) {
-            setDetailsFromThumb(thumbnails[1]);
-            showDetails();
-        }
-        if (event.keyCode === 51) {
-            setDetailsFromThumb(thumbnails[2]);
-            showDetails();
-        }
-        if (event.keyCode === 52) {
-            setDetailsFromThumb(thumbnails[3]);
-            showDetails();
-        }
-        if (event.keyCode === 53) {
-            setDetailsFromThumb(thumbnails[4]);
+        if ((event.keyCode >= 49) && (event.keyCode <= 57)){
+            setDetailsFromThumb(thumbnails[event.keyCode - 49]);
             showDetails();
         }
     });
