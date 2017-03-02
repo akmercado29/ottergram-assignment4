@@ -64,7 +64,7 @@ function addKeyPressHandler() {
     'use strict';
     document.body.addEventListener('keyup', function(event) {
         event.preventDefault();
-        //console.log(event.keyCode);
+        console.log(event.keyCode);
         if (event.keyCode === ESC_KEY) {
             hideDetails();
         }
@@ -76,6 +76,9 @@ function addNumberKeyHandler() {
     var thumbnails = getThumbnailsArray();
     document.body.addEventListener('keyup', function(event) {
         event.preventDefault();
+        //keyCode for the number 1 is 49.
+        //code below will catch the first 9 thumbnails which
+        //corresponds to the 1-9 keys.
         if ((event.keyCode >= 49) && (event.keyCode <= 57)){
             setDetailsFromThumb(thumbnails[event.keyCode - 49]);
             showDetails();
